@@ -12,4 +12,4 @@ To receive LLDP/CDP information can run lldpctl from an AHV host. If you’d lik
 ```bash
 hostssh lldpctl
 ```
-All good
+![Desktop View](/assets/img/sample/2020-12-03-image01.png){: .normal }
