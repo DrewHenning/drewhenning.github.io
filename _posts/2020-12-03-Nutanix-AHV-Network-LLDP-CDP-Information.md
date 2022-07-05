@@ -5,12 +5,6 @@ categories: [Nutanix]
 tags: [ahv,networking]     # TAG names should always be lowercase
 ---
 
----
-title: TITLE
-date: YYYY-MM-DD HH:MM:SS +/-TTTT
-categories: [TOP_CATEGORIE, SUB_CATEGORIE]
-tags: [TAG]     # TAG names should always be lowercase
----
 Nutanix AHV is able to receive Link Layer Discovery Protocol (LLDP) and Cisco Discovery Protocol (CDP) from the upstream switches they are connected to.
 
 To receive LLDP/CDP information can run lldpctl from an AHV host. If you’d like to pull the information from all nodes in a cluster, SSH into a Nutanix CVM and run:
