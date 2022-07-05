@@ -12,4 +12,26 @@ To receive LLDP/CDP information can run lldpctl from an AHV host. If you’d lik
 ```bash
 hostssh lldpctl
 ```
-![Desktop View](/assets/img/2020-12-03-image01.png){: .normal }
+![Command Output](/assets/img/2020-12-03-image01.png)
+
+This is a great way to see details on what switch ports your Nutanix nodes are connected to.
+
+You can also get the switch port details on the Network page from Nutanix Prism. It can give a nice visual of the physical network connections.
+
+![Prism Network View](/assets/img/2020-12-03-image02.png)
+
+By default the Nutanix AHV hypervisor is set to receive-only for LLDP/CDP info from the network.  You can enable the virtual switch in AHV to transmit (TX) LLDP/CDP info. This allows the network administrator to see the AHV hosts on the network by running show lldp neighbor or show cdp neighbor or similar on the upstream swtich.
+
+This setting is configured from the command line on a Nutanix CVM. To get the current setting run:
+
+```bash
+nutanix@NTNX-XXXXXXXX-A-CVM:10.XXX.XXX.31:~$ ncli cluster get-hypervisor-lldp-config Enable LLDP: false
+```
+
+To enable LLDP transmit on a cluster run:
+
+```bash
+nutanix@NTNX-XXXXXXXX-A-CVM:10.XXX.XXX.31:~$ ncli cluster edit-hypervisor-lldp-params enable-lldp-tx=true Enable LLDP: true
+```
+
+I’m a big fan of leveraging LLDP/CDP info instead of going into datacenters and manually tracing cables. Hopefully this can help you when troubleshooting or validating physical network connectivity.
