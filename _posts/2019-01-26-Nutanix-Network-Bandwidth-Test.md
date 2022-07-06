@@ -13,7 +13,7 @@ allssh ./diagnostics/diagnostics.py run_iperf
 
 This will loop through each CVM and test network performance to the other CVM’s in the cluster. It leverages the `diagnostics.py` script that is builtin to each CVM.
 
-**Use caution when executing this script** as iPerf is designed to push the network bandwidth to the max. I typically only use this when setting up a new cluster to validate network performance or if troubleshooting a network performance issue.
+**Use caution when executing this script** as [iPerf](https://iperf.fr/) is designed to push the network bandwidth to the max. I typically only use this when setting up a new cluster to validate network performance or if troubleshooting a network performance issue.
 
 In the example below, you can see we are getting close to line-rate speeds between CVM’s on a 10Gbps network.
 
