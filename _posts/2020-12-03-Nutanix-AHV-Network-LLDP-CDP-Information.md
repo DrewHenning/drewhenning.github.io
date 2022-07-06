@@ -25,13 +25,13 @@ By default the Nutanix AHV hypervisor is set to receive-only for LLDP/CDP info f
 This setting is configured from the command line on a Nutanix CVM. To get the current setting run:
 
 ```bash
-ncli cluster get-hypervisor-lldp-config Enable LLDP: false
+ncli cluster get-hypervisor-lldp-config
 ```
 
 To enable LLDP transmit on a cluster run:
 
 ```bash
-ncli cluster edit-hypervisor-lldp-params enable-lldp-tx=true Enable LLDP: true
+ncli cluster edit-hypervisor-lldp-params enable-lldp-tx=true
 ```
 
 I’m a big fan of leveraging LLDP/CDP info instead of going into datacenters and manually tracing cables. Hopefully this can help you when troubleshooting or validating physical network connectivity.
